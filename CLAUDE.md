@@ -15,7 +15,7 @@ Rules: no behaviour that is not in `spec.md` (update the spec first); requiremen
 - minSdk 36, target/compile 37. Kotlin, Compose, single activity, Media3, DataStore. Package / application id `se.anders.athenamusic`. MIT.
 - Server: Navidrome 0.62 (Subsonic API 1.16.1) on the home network, e.g. `http://your-server:4533`. The address and credentials are entered at first run (the field shows that placeholder) and never committed; keep real addresses out of the repo.
 - Auth tokens in API/stream URLs are secrets: never log them; use `redact()`.
-- v1 scope is deliberately tiny: sign in, browse Artists → Albums → Tracks, play. No favourites, bookmarks, EQ, search, downloads, cover art.
+- v1 scope is deliberately small: sign in, browse Artists → Albums → Tracks, play, cover art, artist search, scroll memory; built: longer playback buffer (FR-030, `playback/BufferConfig.kt`, to be tuned on a journey); next (specified, not built): stream quality on mobile data (FR-070..074), saved library for offline browsing (FR-050..056). No favourites, bookmarks, EQ, album/song search, explicit downloads. An audio disk cache and auto-reconnect were considered and deferred.
 - Look and feel mirrors Athena Launcher/Podcasts (`ui/theme/Theme.kt` copied; do not diverge without updating the spec).
 
 ## Build

@@ -40,6 +40,7 @@ class PlaybackService : MediaSessionService() {
                 /* handleAudioFocus = */ true,
             )
             .setHandleAudioBecomingNoisy(true)
+            .setLoadControl(BufferConfig.loadControl()) // FR-030: buffer minutes ahead, not seconds
             .build()
         // Tapping the notification or lock-screen widget opens the player screen (FR-022).
         val open = PendingIntent.getActivity(

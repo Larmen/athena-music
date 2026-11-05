@@ -9,5 +9,9 @@
 - [ ] Change password on server → next request returns to sign-in with message (FR-004).
 - [x] Sign out → sign-in screen (address and user name prefilled).
 - [ ] Typeface/theme/text size follow the launcher; 140 % text is usable.
+- [x] Buffering (FR-030) on the emulator: buffered position reaches about 5 minutes ahead (fake server, 10-minute tracks).
+- [ ] Buffering on a real journey through the patchy area: the music no longer pauses for a few seconds; tune `BufferConfig` if it still does.
+- [ ] Stream quality (FR-070..074): on Wi-Fi a FLAC plays original ("FLAC · original · Wi-Fi"); switch to mobile data mid-queue: the next track is converted (default "FLAC → 192 kbps · mobile data"), the current one is not interrupted; a low-bitrate MP3 stays as is; seeking in a converted track works (short rewind instant; far jump resumes within about 3 s, or is limited with the "seeking limited" note); set 320/128/Original in Settings → Playback and check the next track; with the server's transcoding off, tracks still play as Original.
+- [ ] Saved library (FR-050..056): open the app in airplane mode: artist list appears at once with "Offline – showing saved list"; search and scroll work; visited artist/album open (playing needs the connection); a never-visited one shows "Could not reach the server" + Retry; back online: the list updates in place without jumping; a removed album disappears; Refresh button works.
 - [ ] Cover art on the real library: album rows, album header, per-song art on albums that have it, icon where none, notification art; switch Cover art to Original in Settings.
 - [ ] Sign out clears cached art.

@@ -40,3 +40,26 @@ Tick when done. Each task leaves the app building.
 - [x] T7.2 Search field + Clear on the artist list; query kept in the view model
 - [x] T7.3 Per-screen list state kept in the view model; dropped on Back and sign-out
 - [x] T7.4 Verified on the API 37 emulator (fake server, 44 artists): search incl. accents, text kept, scroll position restored after Back; real library on phone still to check
+
+## Phase 8 – Playback buffering (FR-030)
+- [x] T8.1 `DefaultLoadControl` in `PlaybackService`: min 2 min / max 5 min, start 2.5 s, rebuffer 5 s, byte target raised so lossless files still reach the time target, keep the last 60 s already played (plan §6)
+- [ ] T8.2 Verify: DONE on the API 37 emulator against a fake server with 10-minute tracks (buffered position reached about 300 s ahead; ExoPlayer's default is about 50 s); still to do: a real journey through the patchy area, then tune the numbers in `BufferConfig`
+
+## Phase 9 – Saved library (FR-050..056)  — *spec only so far, not implemented*
+- [ ] T9.1 `LibraryCache` (JSON envelope, atomic write, 20 MB trim, per server/user keys) + unit tests
+- [ ] T9.2 `LibraryRepository` (saved → fresh / offline / failed, 60 s rule, auth passthrough) + unit tests with a fake client
+- [ ] T9.3 `LibraryViewModel` on the repository; `Load.Ready.offline`; no "Loading…" when saved data exists
+- [ ] T9.4 Screens: offline line under the title, artist-screen Refresh button, in-place update keeps scroll/search
+- [ ] T9.5 Settings "Storage": Clear saved library; sign-out deletes it
+- [ ] T9.6 Verify: emulator (airplane mode: cold start with saved list, visited vs never-visited pages, removal after refresh) and a real journey
+
+## Phase 10 – Stream quality (FR-070..074)  — *spec only so far, not implemented*
+- [ ] T10.1 **Spike on the real server** (plan §8, probes S1–S6, FLAC and VBR MP3): classify the server as case A, B, C or D, pick the output format, and write the decision record into plan §8
+- [ ] T10.2 `athenastream:<id>` queue items + `ResolvingDataSource` (fresh token, quality params); `PlayerController` stops minting token URLs
+- [ ] T10.3 Pure logic + tests: `chooseQuality`, `streamParams`, `qualityLabel`
+- [ ] T10.4 Network class (`NOT_METERED`, `ACCESS_NETWORK_STATE`); per-track decision held for the whole track
+- [ ] T10.5 Fallback to Original when the server refuses a converted request
+- [ ] T10.6 `Track.suffix/bitRate/contentType`; quality line on the player screen
+- [ ] T10.7 Settings "Playback": mobile quality (Original/320/192/128, default 192)
+- [ ] T10.8 Seeking per the spike result (only the matching variant is built): A none · B skip-by-reading with a size limit · C `timeOffset` translation in the resolver · D clamp the seek bar to the buffered part + "seeking limited at this quality"; duration from song metadata in all cases
+- [ ] T10.9 Verify: emulator (fake server: converted vs original, error fallback, Wi-Fi ↔ mobile, a fake server for each seeking case A–D), real server on Wi-Fi vs mobile data, a real journey

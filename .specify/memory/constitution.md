@@ -7,7 +7,7 @@ Shares its spirit with the Athena Launcher and Athena Podcasts constitutions.
 A quiet, monochrome app: no badges, no recommendations, no ads, no autoplay of "suggested" music, no decorative animation.
 
 ## 2. Essentials first
-Sign in, browse the library, play music; cover art and artist search are the extras (spec FR-040, FR-014). Everything else (favourites, bookmarks, playlists, equaliser, album/song search, offline downloads, scrobbling, cast) is out of v1 unless a spec says otherwise.
+Sign in, browse the library, play music; cover art, artist search, a saved library for offline browsing, a longer playback buffer and a mobile-data stream quality setting are the extras (spec FR-040, FR-014, FR-050..056, FR-030, FR-070..074). Everything else (favourites, bookmarks, playlists, equaliser, album/song search, offline downloads, scrobbling, cast) is out of v1 unless a spec says otherwise.
 
 ## 2b. Buttons, not gestures
 No swipe, pull-to-refresh, long-press or drag. Every action is a visible button on the item it applies to.
