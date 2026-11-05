@@ -41,7 +41,7 @@ class SubsonicTest {
     }
 
     @Test fun normalizesAddresses() {
-        assertEquals("http://192.168.1.180:4533", normalizeServerUrl(" 192.168.1.180:4533/ "))
+        assertEquals("http://music.local:4533", normalizeServerUrl(" music.local:4533/ "))
         assertEquals("https://music.example.org", normalizeServerUrl("https://music.example.org"))
         assertNull(normalizeServerUrl("   "))
         assertNull(normalizeServerUrl("http://"))

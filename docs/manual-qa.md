@@ -1,5 +1,5 @@
 # Manual QA (needs the real server and an account)
-- [x] First run: address prefilled `http://192.168.1.180:4533`; wrong password → "Wrong username or password", nothing saved. (emulator, 2026-11-05)
+- [x] First run: address field shows the placeholder `http://your-server:4533` (nothing prefilled); wrong password → "Wrong username or password", nothing saved. (emulator, 2026-11-05)
 - [ ] Android 17 local-network prompt appears at sign-in; denying shows the specific message. (tested only with the permission pre-granted via adb)
 - [ ] Correct login → artist list; kill and reopen app → still signed in.
 - [ ] Artist → albums → tracks in disc/track order; tap a track → plays; album continues to the next track.

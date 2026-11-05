@@ -30,9 +30,6 @@ import se.anders.athenamusic.ui.SignInProblem
 import se.anders.athenamusic.ui.SignInUiState
 import se.anders.athenamusic.ui.components.muted
 
-/** The address the home server is expected at (spec §7): prefilled, editable. */
-const val DEFAULT_SERVER = "http://192.168.1.180:4533"
-
 /** FR-001: server address, user name and password, checked with `ping` before anything is saved. */
 @Composable
 fun SignInScreen(
@@ -41,7 +38,7 @@ fun SignInScreen(
     state: SignInUiState,
     onSignIn: (server: String, username: String, password: String) -> Unit,
 ) {
-    var server by rememberSaveable { mutableStateOf(initialServer.ifEmpty { DEFAULT_SERVER }) }
+    var server by rememberSaveable { mutableStateOf(initialServer) }
     var username by rememberSaveable { mutableStateOf(initialUsername) }
     var password by rememberSaveable { mutableStateOf("") }
     Column(Modifier.fillMaxWidth().safeDrawingPadding().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp, vertical = 32.dp)) {
@@ -52,6 +49,7 @@ fun SignInScreen(
         OutlinedTextField(
             value = server, onValueChange = { server = it }, singleLine = true, modifier = Modifier.fillMaxWidth(),
             label = { Text(stringResource(R.string.signin_server)) },
+            placeholder = { Text(stringResource(R.string.signin_server_placeholder)) },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Uri),
         )
         Spacer(Modifier.height(12.dp))

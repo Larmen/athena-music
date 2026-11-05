@@ -85,5 +85,5 @@ Theme, typeface and text size follow Athena Launcher; local settings apply when 
 
 ## 7. Open questions
 - [NEEDS CLARIFICATION] Account credentials: entered by the user at first run (no credentials are stored in the repo).
-- Should the sign-in default the address to `http://192.168.1.180:4533`? Currently yes (prefilled, editable).
+- The sign-in address is never prefilled: the field shows the placeholder `http://your-server:4533`. The user's real address stays out of the repository.
 - Album/song search and offline downloads are the natural next specs.

@@ -46,6 +46,7 @@
     <string name="settings_sign_out">Sign out</string>
     <string name="signin_title">Sign in</string>
     <string name="signin_server">Server address</string>
+    <string name="signin_server_placeholder">http://your-server:4533</string>
     <string name="signin_username">Username</string>
     <string name="signin_password">Password</string>
     <string name="signin_button">Sign in</string>

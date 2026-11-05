@@ -13,7 +13,7 @@ Sign in, browse the library, play music; cover art and artist search are the ext
 No swipe, pull-to-refresh, long-press or drag. Every action is a visible button on the item it applies to.
 
 ## 3. One server, nothing else
-The only network peer is the user's own music server (Navidrome / Subsonic API at the address the user enters; today `http://192.168.1.180:4533` on the home network). No analytics, no crash-reporting SDKs, no ads, no third-party services.
+The only network peer is the user's own music server (Navidrome / Subsonic API at the address the user enters, e.g. `http://your-server:4533` on the home network). No analytics, no crash-reporting SDKs, no ads, no third-party services.
 
 ## 4. Secrets stay secret
 The server password is stored app-private, encrypted with an Android Keystore key. Stream and API URLs carry an auth token: never log them, never show them in the UI; log through the redaction helper only.

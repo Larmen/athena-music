@@ -33,7 +33,7 @@ ui/         MainViewModel, LibraryViewModel, PlayerViewModel
 
 ## 3. Key decisions
 ### 3.1 Server
-Navidrome 0.62.0 at `http://192.168.1.180:4533` (probed 2026-11-05: `/rest/ping` answers `openSubsonic: true`; Caddy also serves https on 192.168.1.180:443 — not used in v1). API version sent: `v=1.16.1`, `c=athena-music`, `f=json`.
+Navidrome 0.62.0 on the home network, port 4533 (probed 2026-11-05: `/rest/ping` answers `openSubsonic: true`; the server host also offers https via a reverse proxy — not used in v1). API version sent: `v=1.16.1`, `c=athena-music`, `f=json`.
 
 ### 3.2 Auth
 Subsonic token auth: per request `s` = random 8-byte hex salt, `t` = md5(password + salt). The password never leaves the device in clear text. Stream URLs are built at play time, one salt per media item; they hold a token and are secrets (redacted in logs). MD5 is mandated by the protocol; it is not used for anything else.
