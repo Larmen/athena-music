@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The home music server is plain http on the local network (spec NFR-002). Cleartext is allowed at the platform
+  level; TLS errors are never ignored (no trust overrides anywhere).
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>

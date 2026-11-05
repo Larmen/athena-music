@@ -1,0 +1,13 @@
+# Manual QA (needs the real server and an account)
+- [x] First run: address prefilled `http://192.168.1.180:4533`; wrong password → "Wrong username or password", nothing saved. (emulator, 2026-11-05)
+- [ ] Android 17 local-network prompt appears at sign-in; denying shows the specific message. (tested only with the permission pre-granted via adb)
+- [ ] Correct login → artist list; kill and reopen app → still signed in.
+- [ ] Artist → albums → tracks in disc/track order; tap a track → plays; album continues to the next track.
+- [x] Notification and system media controls: previous / play-pause / next shown, public (lock-screen) visibility, foreground service. (emulator has no screen lock; not tried on a real locked phone)
+- [x] Media buttons (play, pause, headset hook, next, previous) via adb key events. [ ] Real Bluetooth / headset unplug still untested (no hardware in the emulator).
+- [x] Server unreachable (Wi-Fi and data off) → "Could not reach the server." with Retry; Retry recovers when back online.
+- [ ] Change password on server → next request returns to sign-in with message (FR-004).
+- [x] Sign out → sign-in screen (address and user name prefilled).
+- [ ] Typeface/theme/text size follow the launcher; 140 % text is usable.
+- [ ] Cover art on the real library: album rows, album header, per-song art on albums that have it, icon where none, notification art; switch Cover art to Original in Settings.
+- [ ] Sign out clears cached art.
