@@ -100,7 +100,7 @@ Theme, typeface and text size follow Athena Launcher; local settings apply when 
 **Appearance & settings**
 - FR-060 Style: monochrome, same colour tokens as `athena-launcher`/`athena-podcasts` `Theme.kt`; no dynamic colour.
 - FR-061 Theme (system/light/dark), typeface (same twelve), text size 80–140 %.
-- FR-062 **Follow launcher** (default on): read the launcher's appearance bridge (`content://se.anders.athenalauncher.appearance/appearance`, signature permission); fall back to local values field by field. The last values read are cached locally so a cold start looks right before the launcher answers (it can take several seconds to wake); the cache is dropped only when the launcher is known to be missing or to refuse access, and a slow or empty answer never changes the look.
+- FR-062 **Follow launcher** (default on): read the launcher's appearance bridge (`content://com.anderslarm.athenalauncher.appearance/appearance`, signature permission); fall back to local values field by field. The last values read are cached locally so a cold start looks right before the launcher answers (it can take several seconds to wake); the cache is dropped only when the launcher is known to be missing or to refuse access, and a slow or empty answer never changes the look.
 - FR-064 Settings screen: Server (address, sign out), Playback (FR-070), Storage (FR-055), Appearance (follow launcher, theme, typeface, text size, cover art style), About (Open-source licences).
 - FR-066 Licences screen listing the app, bundled fonts and libraries.
 

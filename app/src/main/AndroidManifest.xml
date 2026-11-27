@@ -11,9 +11,9 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <!-- FR-062: read the theme, typeface and text size that Athena Launcher publishes (signature-protected). -->
-    <uses-permission android:name="se.anders.athenalauncher.permission.READ_APPEARANCE" />
+    <uses-permission android:name="com.anderslarm.athenalauncher.permission.READ_APPEARANCE" />
     <queries>
-        <provider android:authorities="se.anders.athenalauncher.appearance" />
+        <provider android:authorities="com.anderslarm.athenalauncher.appearance" />
     </queries>
 
     <application

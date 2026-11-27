@@ -29,7 +29,7 @@ data class LauncherAppearance(
 
 /** Where the launcher's read-only appearance values live (launcher spec FR-070). */
 object LauncherBridge {
-    const val AUTHORITY = "se.anders.athenalauncher.appearance"
+    const val AUTHORITY = "com.anderslarm.athenalauncher.appearance"
     const val COL_THEME_MODE = "themeMode"
     const val COL_TYPEFACE = "typeface"
     const val COL_TEXT_SCALE = "textScalePercent"

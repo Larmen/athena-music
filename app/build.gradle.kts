@@ -9,7 +9,7 @@ android {
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "se.anders.athenamusic"
+        applicationId = "com.anderslarm.athenamusic"
         minSdk = 36
         targetSdk = 37
         versionCode = 1
