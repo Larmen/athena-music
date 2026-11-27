@@ -17,8 +17,23 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    // Release signing: the key lives outside the repo; set these in ~/.gradle/gradle.properties.
+    // Without them the release build is simply unsigned (CI still builds).
+    signingConfigs {
+        val keystore = providers.gradleProperty("athenaKeystore").orNull
+        if (keystore != null) {
+            create("release") {
+                storeFile = file(keystore)
+                storePassword = providers.gradleProperty("athenaKeystorePassword").orNull
+                keyAlias = providers.gradleProperty("athenaKeyAlias").orNull
+                keyPassword = providers.gradleProperty("athenaKeyPassword").orNull
+            }
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig = signingConfigs.findByName("release")
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
