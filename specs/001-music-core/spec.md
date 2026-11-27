@@ -70,6 +70,7 @@ Theme, typeface and text size follow Athena Launcher; local settings apply when 
 - FR-023 Pause on headphone unplug and on audio-focus loss; resume rules as Media3 defaults.
 - FR-024 Player screen: title, artist, album, position/duration, seek bar, Previous, Play/Pause, Next. A now-playing strip is shown under the library screens while something is loaded.
 - FR-025 The queue is not persisted across app restarts in v1.
+- FR-080 Lower for navigator cues: while the playback service is running, **Athena Navigator** can ask it to turn music down for the length of a sound cue. The app then plays at 20 % of its volume for the requested time (at most 5 s) and returns to full volume by itself; playback is never paused, and a new request restarts the time. Only an app signed with the same key can ask (signature permission `se.anders.athenanavigator.permission.DUCK`, declared by the navigator). Audio focus behaviour towards all other apps is unchanged (FR-023). Without the navigator nothing changes.
 
 **Stream quality** (US8; extends FR-021)
 - FR-070 **Setting.** "Stream quality on mobile data": Original, 320, 192 or 128 kbps; default **192 kbps**. There is no setting for Wi-Fi: on an unmetered network the original is always played. Lives under a "Playback" heading in Settings.

@@ -30,6 +30,7 @@ import se.anders.athenamusic.MainActivity
  */
 class PlaybackService : MediaSessionService() {
     private var session: MediaSession? = null
+    private var ducker: CueDucker? = null
 
     override fun onCreate() {
         super.onCreate()
@@ -42,6 +43,7 @@ class PlaybackService : MediaSessionService() {
             .setHandleAudioBecomingNoisy(true)
             .setLoadControl(BufferConfig.loadControl()) // FR-030: buffer minutes ahead, not seconds
             .build()
+        ducker = CueDucker(this, player).also { it.register() } // FR-080
         // Tapping the notification or lock-screen widget opens the player screen (FR-022).
         val open = PendingIntent.getActivity(
             this, 0,
@@ -93,6 +95,7 @@ class PlaybackService : MediaSessionService() {
     }
 
     override fun onDestroy() {
+        ducker?.release()
         session?.run {
             player.release()
             release()

@@ -63,3 +63,7 @@ Tick when done. Each task leaves the app building.
 - [ ] T10.7 Settings "Playback": mobile quality (Original/320/192/128, default 192)
 - [ ] T10.8 Seeking per the spike result (only the matching variant is built): A none · B skip-by-reading with a size limit · C `timeOffset` translation in the resolver · D clamp the seek bar to the buffered part + "seeking limited at this quality"; duration from song metadata in all cases
 - [ ] T10.9 Verify: emulator (fake server: converted vs original, error fallback, Wi-Fi ↔ mobile, a fake server for each seeking case A–D), real server on Wi-Fi vs mobile data, a real journey
+
+## Phase 11 – Lower for navigator cues · FR-080
+- [x] N1 `CueDucker` in `PlaybackService` + unit test
+- [~] N2 Verify with Athena Navigator (emulator: the running service received the navigator's request; the volume change was not observed because no music was playing (no server)); still to do: a ride on the phone
